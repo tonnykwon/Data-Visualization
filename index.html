@@ -1,16 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<script src="https://d3js.org/d3.v3.min.js"></script>
-		<link rel="stylesheet" href="index.css">
+	<meta charset="utf-8">
+	<title>Data Visualization</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="onepage-scroll/jquery.onepage-scroll.js"></script>
+	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<link href='onepage-scroll/onepage-scroll.css' rel='stylesheet' type='text/css'>
+	<link href='index.css?v=13' rel='stylesheet' type='text/css'>
+	
 </head>
 <body>
-	<div id="dashboard">
-		<p>Earnings</p>
-		<div class="chart">
-
-		</div>
+	<div class="wrapper">
+	  <div class="main">
+			<section class="page1">
+			<div style="float:left; width:60%; margin-left:2.5%; margin-top:2.5%;  padding:1.5%; background-color:rgba(0,0,0,0.3);">
+				<h1>Fast Food or Vegetarian</h1>
+				<p>See how many fast food and vegetarian restaruants are in each states.</p>
+				<p>Kwon, YoungJu - CS498 Data Visualization</p>
+			</div>
+			</section>
+		
+			<section class="page2">
+				<div class="page_container" style=" margin:2.5%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.3);" >
+					<h1> About the Visualization </h1>
+					<p>This web is interactive slideshow based on the data of number of vegetarian and fast food restaurants. 
+					Dataset contains each restaurants’ locations, states they located in, menus, name and so on. 
+					With population dataset added, the numbers are scaled for better comparison between states.</p>
+					  
+					<h2>Overall Structures</h2>
+					<p>
+					onepage-scroll.js template is employed for interactive slideshow. 
+					It basically enables to users to go slide by slide with simple scrolling or direction keys.
+					</p>
+					
+					<h2> Scenes </h2>
+					<p>The project consists of slides. Users can navigate each slide in sequence by using scrolling, or up down buttons. 
+					Also, on the right side of web, it has small dots for navigating pages. In order to see details of each data of states, I use different types of charts including scatter, choropleth map, and bar charts. 
+					I found out scatter or bar chart alone is not enough to give location information about states. </p>
+					
+					<h2> Annotations </h2>
+					<p>Various tooltips, axis, labels and legends are used in all three different scenes. 
+					For instance, in scatter plot, tooltips come up when mouse is on the circles, describing its population and number of each types of restaurants. </p>
+					
+					<h2> Parameters </h2>
+					<p>On the right side of web, it has small dots for navigating pages. 
+					In scatter plot, legend boxes are parameters for filtering each region of states.
+					By clicking each states in the choropleth map, bar plot shows number of each types restaurants of selected states.
+					</p>
+					
+					<h2> Triggers </h2>
+					<p>Zoom and buttons are employed for updating new parameters in scenes. 
+					By double clicking and dragging, you can zoom into details of scatter plot data, with coordinates parameters are updated. 
+					And ‘reset zoom’ button will trigger to return to the original coordinates and sizes.
+					‘Vegetarian’, ‘Fast-Food’ buttons are triggers that change bar plot with its maximum and minimum numbers.
+					</p>
+					
+				</div>
+			</section>
+		
+			<section class="page3" style="width:100%; height:100%; padding-top:5%;">
+				<div style="float:left; width: 60%;">
+					<div id="scatter" ></div>
+						<div class="tooltip" id="scattertip">
+							<p id="title"><strong>Important Label Heading</strong></p>
+							<p><span id="xval">100</span></p>
+							<p><span id="yval">100</span></p>
+							<p><span id="pop">100</span></p>
+						</div>
+					<button class="reset" >Reset Zoom</button>
+					<button class="scale"> Scale </button>
+				</div>
+				<div style="float: right; width:30%; margin-right:5%">
+				  <h1>OVERVIEW</h1>
+				  <h2>Each circle indicates states and its size is proportional to the state. 
+				  </h2>
+			</section>	
+			
+			<section class="page4" style="width:100%; padding-top:5%;">
+				<div style="float:right; width:60%; padding-left:5%;">
+					<div id="map"></div>
+						<div class="tooltip" id="maptip">
+							<p id="title"><strong>Important Label Heading</strong></p>
+							<p><span id="value">100</span></p>
+						</div>
+						<button class="veggie">Vegetarian</button>
+						<button class="fast">Fast Food</button>
+				</div>
+				<div style="float:left; width:30%; padding-left:2.5%;">
+					<h1> DETAILS</h1>
+					<h2>Choropleth map shows how many restaurants each states have per 100,000 people.</h2>
+					<svg class="chart">
+					</svg>
+				</div>
+			</section>
 	</div>
-	<script src="index.js"></script>
+  </div>
+  
+  <script type="text/javascript" src="index.js?v=4"></script>
 </body>
 </html>
