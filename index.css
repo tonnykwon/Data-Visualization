@@ -231,11 +231,18 @@ header {
   left: 50%;
   margin-left: -1095px;
 }
-.main section.page2 .page_container {
+
+.main section.page5 {
+  background-image: url("img/blur-close-up-cooked-162971.jpg");
+  background-size:cover;
+  text-align: left;
+}
+
+.main section.page2 .page_container, .main section.page5 .page_container  {
   margin-top: 15px;
   overflow: hidden;
 }
-.main section.page2 h1 {
+.main section.page2 h1, .main section.page5 h1 {
   padding: 0;
   margin-bottom: 15px;
   font-size: 30px;
@@ -243,12 +250,12 @@ header {
   color: white;
   font-weight: bold;
 }
-.main section.page2 h2 {
+.main section.page2 h2 , .main section.page5 h2 {
   color: rgba(255,255,255,0.85);
   line-height: 100%;
   font-weight: bold;
 }
-.main section.page2 p {
+.main section.page2 p, .main section.page5 p  {
   color: rgba(255,255,255,0.85);
   line-height: 100%;
   font-weight: 100;
