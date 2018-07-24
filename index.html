@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="onepage/jquery.onepage-scroll.js"></script>
 	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 	<link href='onepage/onepage-scroll.css' rel='stylesheet' type='text/css'>
-	<link href='index.css?v=20' rel='stylesheet' type='text/css'>
+	<link href='index.css?v=23' rel='stylesheet' type='text/css'>
 	
 </head>
 <body>
@@ -19,6 +19,15 @@
 				<h1>Fast Food or Vegetarian</h1>
 				<p>See how many fast food and vegetarian restaruants are in each states.</p>
 				<p>Kwon, YoungJu - CS498 Data Visualization</p>
+			</div>
+			</section>
+			
+			<section class="page15">
+			<div class="page_container" style=" margin:2.5%; padding-bottom:1%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.4);">
+				<h1>The Dataset</h1>
+				<h2>Three datasets have been used. First dataset has a list of over 10,000 fast food restaurants across America with their locations, and second dataset contains a list of over 18,000 restaurants that serve vegetarian or vegan food. With estimated total population in each states added, this data visualization is to explore which state likes fast food or vegetables dishes most. </br> </br>
+The reason why there are much more vegetarian restaurants than fast food restaurants is probability because restaurants that serve any vegetarian dish is considered vegetarian in the dataset.
+				</h2>
 			</div>
 			</section>
 		
@@ -70,28 +79,33 @@ By clicking each states in the choropleth map, bar plot shows number of each typ
 							<p><span id="yval">100</span></p>
 							<p><span id="pop">100</span></p>
 						</div>
-					<button class="reset" >Reset Zoom</button>
+					<button class="reset">Reset Zoom</button>
 					<button class="scale"> Scale </button>
 				</div>
 				<div style="float: right; width:30%; margin-right:5%">
 				  <h1>OVERVIEW</h1>
-				  <h2>Each circle indicates states and its size is proportional to the state. 
+				  <h2>Each circle indicates states and its size is proportional to the total residents, while x and y axes represent the number of each type of restaurants. </br>
+By pressing scaling button, it is easier to compare the number of restaurants per 100,000 resident in the state.
+
 				  </h2>
 			</section>	
 			
 			<section class="page4" style="width:100%; height:100%; padding-top:5%;">
-				<div style="float:right; width:60%; padding-left:5%;">
+				<div style="float:right; width:55%; padding-left:2.5%;">
 					<div id="map"></div>
 						<div class="tooltip" id="maptip">
 							<p id="title"><strong>Important Label Heading</strong></p>
 							<p><span id="value">100</span></p>
 						</div>
-						<button class="veggie">Vegetarian</button>
-						<button class="fast">Fast Food</button>
+						<button class="veggie" style="background:#4e8dba;">Vegetarian</button>
+						<button class="fast" style="background:#e17f0e;">Fast Food</button>
 				</div>
 				<div style="float:left; width:30%; padding-left:2.5%;">
 					<h1> DETAILS</h1>
-					<h2>Choropleth map shows how many restaurants each states have per 100,000 people.</h2>
+					<h2>Choropleth map shows how many restaurants each states have per 100,000 people. </br>
+Clicking each states on the map enables to compare with the states that have either maximum or minimum number of that type of restaurants.
+
+					</h2>
 					<svg class="chart">
 					</svg>
 				</div>
@@ -99,7 +113,7 @@ By clicking each states in the choropleth map, bar plot shows number of each typ
 			
 			
 			
-			<section class="page5" style="width:100%;">
+			<section class="page5" >
 				<div class="page_container" style=" margin:2.5%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.4);" >
 					<h1> Acknowledgement </h1>
 					  
@@ -122,9 +136,8 @@ By clicking each states in the choropleth map, bar plot shows number of each typ
 					<p><a href="https://github.com/tonnykwon/Data-Visualization">Data-Visualization </a></p>
 				</div>
 			</section>
-			<button class="btn"> button</button>
 	</div>
-    <a onclick="to_about_page()"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">About the Visualization</a>
+    <a class="toViz" onclick="to_about_page()"> -ABOUT THE VISUALIZATION-</a>
   </div>
   
   <script type="text/javascript" src="index.js?v=5"></script>

@@ -207,6 +207,28 @@ header {
   font-weight: bold;
 }
 
+.main section.page15 {
+  background-image: url("img/anise-aroma-art-277253.jpg");
+  background-size: cover;
+}
+.main section.page15 h1 {
+  text-align: left;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 55px;
+  color: white;
+  font-weight: bold;
+}
+.main section.page15 h2 {
+  text-align: left;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: white;
+  font-weight: bold;
+}
+
 .main section.page2 {
   background-image: url("img/appetizer-close-up-cuisine-992823.jpg");
   background-size:cover;
@@ -225,9 +247,10 @@ header {
   text-align: left;
 }
 
-.main section.page2 .page_container, .main section.page5 .page_container  {
+.main section.page2 .page_container, .main section.page5 .page_container , .main section.page15 .page_container   {
   margin-top: 15px;
   overflow: hidden;
+  height:85%;
 }
 .main section.page2 h1, .main section.page5 h1 {
   padding: 0;
@@ -237,15 +260,29 @@ header {
   color: white;
   font-weight: bold;
 }
-.main section.page2 h2 , .main section.page5 h2 {
+
+ .main section.page5 h1{
+ font-size: 40px;
+ }
+
+.main section.page2 h2{
   color: rgba(255,255,255,0.85);
   line-height: 100%;
   font-weight: bold;
 }
+
+.main section.page5 h2 {
+  color: rgba(255,255,255,0.85);
+  font-size: 30px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
 .main section.page2 p, .main section.page5 p, .main section.page5 a  {
   color: rgba(255,255,255,0.85);
   line-height: 100%;
   font-weight: 100;
+  font-size: 18px;
 }
 .viewing-page-2 .back{
   background: rgba(0, 0, 0, 0.25);
@@ -389,4 +426,27 @@ body.disabled-onepage-scroll .main section.page3 .page_container {
 .bar:hover {
   fill: brown;
 }
+
 /* button CSS if i have time*/
+.toViz{
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0; 
+	color:white;
+	font-size: 15px;
+	font-weight:bold;
+}
+
+button {
+	color: #fff;
+	text-transform: uppercase;
+	background: #AAAAAA;
+	padding: 7px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+}

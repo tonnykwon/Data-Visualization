@@ -64,8 +64,8 @@ var svgMap = d3.select("#map")
 	
 // drawing map
 var projection = d3.geo.albersUsa()
-						.translate([width/1.7, height/2])
-						.scale([900]);
+						.translate([width/1.7, height/1.7])
+						.scale([1000]);
 var path = d3.geo.path().projection(projection);
 /********************************************/
 
@@ -573,8 +573,8 @@ d3.csv("data/processed_population.csv", function(data){
 		
 		// max, min data in each category
 		var xyCat =[yCat, xCat];
-		var maxLabel = data[maxMin[vof][2]][mapCat];
-		var minLabel = data[maxMin[vof][3]][mapCat];
+		var maxLabel = data[maxMin[vof][2]][mapCat]+" (Max)";
+		var minLabel = data[maxMin[vof][3]][mapCat]+" (Min)";
 		var maxData = maxMin[vof][0];
 		var minData = maxMin[vof][1];
 		var maxYData = Math.round(data[maxMin[vof][2]][xyCat[vof][1]]);
@@ -582,7 +582,7 @@ d3.csv("data/processed_population.csv", function(data){
 		
 		if(vof==1){
 			var barData = {
-			  labels: [	maxLabel, selectedLabel, minLabel ],
+			  labels: [	maxLabel, selectedLabel, minLabel],
 			  series: [	{ label: 'Vegetarian',  values: [maxData, yData, minData] },
 				{  label: 'Fast Food',  values: [maxYData, xData, minYData ]	},]
 			};
@@ -595,10 +595,10 @@ d3.csv("data/processed_population.csv", function(data){
 		}
 
 		var chartWidth       = 400,
-			barHeight        = 30,
+			barHeight        = 25,
 			groupHeight      = barHeight * barData.series.length,
-			gapBetweenGroups = 30,
-			spaceForLabels   = 150,
+			gapBetweenGroups = 25,
+			spaceForLabels   = 180,
 			spaceForLegend   = 150,
 			extraHeight 	 = 30;
 
@@ -763,5 +763,5 @@ $(document).ready(function(){
 	});
 });
 function to_about_page(){
-	$(".main").moveTo(2);
+	$(".main").moveTo(3);
 }
