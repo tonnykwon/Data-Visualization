@@ -255,7 +255,7 @@ header {
   line-height: 100%;
   font-weight: bold;
 }
-.main section.page2 p, .main section.page5 p  {
+.main section.page2 p, .main section.page5 p, .main section.page5 a  {
   color: rgba(255,255,255,0.85);
   line-height: 100%;
   font-weight: 100;
