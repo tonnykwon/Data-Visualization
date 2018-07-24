@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="onepage/jquery.onepage-scroll.js"></script>
 	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 	<link href='onepage/onepage-scroll.css' rel='stylesheet' type='text/css'>
-	<link href='index.css?v=16' rel='stylesheet' type='text/css'>
+	<link href='index.css?v=20' rel='stylesheet' type='text/css'>
 	
 </head>
 <body>
@@ -22,8 +22,8 @@
 			</div>
 			</section>
 		
-			<section class="page2">
-				<div class="page_container" style=" margin:2.5%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.3);" >
+			<section class="page2" id="2">
+				<div class="page_container" style=" margin:2.5%; padding-bottom:1%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.3);" >
 					<h1> About the Visualization </h1>
 					<p>This web is interactive slideshow based on the data of number of vegetarian and fast food restaurants. 
 					Dataset contains each restaurants’ locations, states they located in, menus, name and so on. 
@@ -36,25 +36,26 @@
 					</p>
 					
 					<h2> Scenes </h2>
-					<p>The project consists of slides. Users can navigate each slide in sequence by using scrolling, or up down buttons. 
-					Also, on the right side of web, it has small dots for navigating pages. In order to see details of each data of states, I use different types of charts including scatter, choropleth map, and bar charts. 
-					I found out scatter or bar chart alone is not enough to give location information about states. </p>
+					<p>The project consists of slides. Users can navigate each slide in sequence by using scrolling, or up down buttons. In order to explore both overview and details of each data of states, various types of charts for scenes including scatter, choropleth map, and bar charts are used. Scatter or bar chart alone is not enough to give location information about states. </br>
+Scatter plot shows general information about the number of each restaurants with and without scaled by population. Axes are little larger than range of data for better view. Axes also change when scaled. The size of mark is proportional to it population. </br>
+Choropleth map and bar charts are grouped together in fourth slide. Map visualization give better intuition about which state has how many restaurants. And with bar plots, it is easier to compare with maximum and minimum numbers of restaurants.
+</p>
 					
 					<h2> Annotations </h2>
 					<p>Various tooltips, axis, labels and legends are used in all three different scenes. 
 					For instance, in scatter plot, tooltips come up when mouse is on the circles, describing its population and number of each types of restaurants. </p>
 					
 					<h2> Parameters </h2>
-					<p>On the right side of web, it has small dots for navigating pages. 
-					In scatter plot, legend boxes are parameters for filtering each region of states.
-					By clicking each states in the choropleth map, bar plot shows number of each types restaurants of selected states.
+					<p>On the right side of web, it has small dots for navigating pages. </br>
+In scatter plot, legend boxes are parameters for filtering circles based on regions of states. </br>
+By clicking each states in the choropleth map, bar plot shows number of each types restaurants of selected states in bar plot.
+
 					</p>
 					
 					<h2> Triggers </h2>
-					<p>Zoom and buttons are employed for updating new parameters in scenes. 
-					By double clicking and dragging, you can zoom into details of scatter plot data, with coordinates parameters are updated. 
-					And ‘reset zoom’ button will trigger to return to the original coordinates and sizes.
-					‘Vegetarian’, ‘Fast-Food’ buttons are triggers that change bar plot with its maximum and minimum numbers.
+					<p>Zoom functions and buttons are employed for updating new parameters in scenes. By double clicking and dragging, coordinates parameters are updated. And ‘reset zoom’ button will trigger to return to the original coordinates and sizes, while ‘scale’ button moves each circles position to scaled coordinates. </br>
+‘Vegetarian’, ‘Fast-Food’ buttons under choropleth map are triggers that change bar plot with its maximum and minimum numbers based on the type of restaurants.
+
 					</p>
 					
 				</div>
@@ -78,7 +79,7 @@
 				  </h2>
 			</section>	
 			
-			<section class="page4" style="width:100%; padding-top:5%;">
+			<section class="page4" style="width:100%; height:100%; padding-top:5%;">
 				<div style="float:right; width:60%; padding-left:5%;">
 					<div id="map"></div>
 						<div class="tooltip" id="maptip">
@@ -99,7 +100,7 @@
 			
 			
 			<section class="page5" style="width:100%;">
-				<div class="page_container" style=" margin:2.5%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.3);" >
+				<div class="page_container" style=" margin:2.5%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.4);" >
 					<h1> Acknowledgement </h1>
 					  
 					<h2> Datasets </h2>
@@ -107,19 +108,25 @@
 					<p> <a href ="https://www.kaggle.com/datafiniti/fast-food-restaurants" target="_blank">Fast Food Restaurants Across America </a></p>
 					<p> <a href ="https://www2.census.gov/programs-surveys/popest/datasets/2010-2017/state/asrh/" target="_blank">Estimates of the Total Resident Population </a></p>
 					
-					<h2> Background Images </h2>
-					<p>Vegetarian Burger</p>
-					<p>Vegetables </p>
+					<h2> Background Images</h2>
+					<p> <a href ="https://www.pexels.com/photo/asparagus-bread-burger-burger-buns-416594/" target="_blank">Asparagus Bread Burger </a></p>
+					<p> <a href ="https://www.pexels.com/photo/shallow-focus-photography-of-sliced-strawberries-and-black-olives-992823/" target="_blank">Appetizer Close Up Cuisine</a></p>
+					<p> <a href ="https://www.pexels.com/photo/variety-of-cooked-dishes-374052/)" target="_blank">Bread Breakfast Coffee</a></p>
 					
 					<h2> D3 Libraries </h2>
 					<p> <a href ="https://bl.ocks.org/floofydugong/9c94ab01d8c3ed8ea3821d4a7e119b07" target="_blank">Interactive Scatter Plot/Legend</a></p>
 					<p><a href ="http://bl.ocks.org/erikvullings/51cc5332439939f1f292" target="_blank">Grouped Horizontal bar</a></p>
-					<p>Interactive Data Visualization for the Web_ An Introduction to Designing with D3</p>
+					<p>Interactive Data Visualization for the Web - An Introduction to Designing with D3</p>
+					
+					<h2> Github Code </h2>
+					<p><a href="https://github.com/tonnykwon/Data-Visualization">Data-Visualization </a></p>
 				</div>
 			</section>
+			<button class="btn"> button</button>
 	</div>
+    <a onclick="to_about_page()"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">About the Visualization</a>
   </div>
   
-  <script type="text/javascript" src="index.js?v=4"></script>
+  <script type="text/javascript" src="index.js?v=5"></script>
 </body>
 </html>

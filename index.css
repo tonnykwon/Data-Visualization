@@ -81,11 +81,6 @@ h2 {
   color: white;
   margin: 0;
 }
-
-.main h1.demo1 {
-  background: #1ABC9C;
-}
-
 .reload.bell {
   font-size: 12px;
   padding: 20px;
@@ -211,15 +206,7 @@ header {
   color: white;
   font-weight: bold;
 }
-.main section .page_container .btns {
-  clear: both;
-  float: left;
-  text-align: center;
-  width: 435px;
-}
-.main section .page_container .btns a{
-  text-align: center;
-}
+
 .main section.page2 {
   background-image: url("img/appetizer-close-up-cuisine-992823.jpg");
   background-size:cover;
@@ -233,7 +220,7 @@ header {
 }
 
 .main section.page5 {
-  background-image: url("img/blur-close-up-cooked-162971.jpg");
+  background-image: url("img/bread-breakfast-coffee-374052.jpg");
   background-size:cover;
   text-align: left;
 }

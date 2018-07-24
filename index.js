@@ -5,8 +5,8 @@ var margin = {
         bottom: 50,
         left: 70
     },
-    outerWidth = (1050*0.85),
-    outerHeight = (500*0.85),
+    outerWidth = (1050*1),
+    outerHeight = (500*1),
     width = outerWidth - margin.left - margin.right,
     height = outerHeight - margin.top - margin.bottom;
 
@@ -47,6 +47,7 @@ var scaled = 0;
 
 /*****************map setting*****************/
 // global variables
+// 0: fast food, 1:veggie
 var veggieOrFast = 1;
 var selectedState = 0;
 
@@ -64,13 +65,13 @@ var svgMap = d3.select("#map")
 // drawing map
 var projection = d3.geo.albersUsa()
 						.translate([width/1.7, height/2])
-						.scale([850]);
+						.scale([900]);
 var path = d3.geo.path().projection(projection);
-
 /********************************************/
 
 // scatter plot Dataset
 d3.csv("data/processed_population.csv", function(data){
+	
 	data.forEach(function(d) {
 		d[xCat[0]] = +d[xCat[0]];
 		d[yCat[0]] = +d[yCat[0]];
@@ -81,6 +82,11 @@ d3.csv("data/processed_population.csv", function(data){
 		d[xCat[1]] = d[xCat[0]]/d[rCat]*100000;
 		d[yCat[1]] = d[yCat[0]]/d[rCat]*100000;
 	});
+	
+	// data max min
+	var xMaxMin = max_min(data, xCat[1]);
+	var yMaxMin = max_min(data, yCat[1]);
+	maxMin = [xMaxMin, yMaxMin];
 	
 	// set Domain
 	var xMax = d3.max(data, function(d) {
@@ -100,6 +106,13 @@ d3.csv("data/processed_population.csv", function(data){
 	x.domain([xMin, xMax]);
 	y.domain([yMin, yMax]);
 	
+	var xMean = Math.round(d3.mean(data, function(d){
+		return d[xCat[1]];
+	}));
+	var yMean = Math.round(d3.mean(data, function(d){
+		return d[yCat[1]];
+	}));
+	
 	// set Color for labels
     var color = d3.scale.category10();
 
@@ -117,7 +130,6 @@ d3.csv("data/processed_population.csv", function(data){
 					return y(d[yCat[scaled]]);
 				}
 			})
-			
 	}
 	
     var zoomBeh = d3.behavior.zoom()
@@ -199,7 +211,7 @@ d3.csv("data/processed_population.csv", function(data){
 		.style("fill", function(d) {
 			return color(d[colorCat]);
 		});
-	
+		
 	// mouse movement tooltip event
 	objects.selectAll("circle")
 	.on("mouseover", function(d){
@@ -368,6 +380,7 @@ d3.csv("data/processed_population.csv", function(data){
 					return y(d[yCat[1]]);
 				}
 			});
+		
 		scaled=1;
 	}
 	
@@ -472,7 +485,7 @@ d3.csv("data/processed_population.csv", function(data){
 				.append("path")
 				.attr("d", path)
 				.style("stroke", "#fff")
-				.style("stroke-width", "1.5")
+				.style("stroke-width", "2")
 				.attr("fill", function(d){
 					// get data Value
 					if(vof==0){
@@ -527,6 +540,8 @@ d3.csv("data/processed_population.csv", function(data){
 					barChart(veggieOrFast, i);
 				});
 		});
+		
+
 	
 	}
 	
@@ -548,10 +563,6 @@ d3.csv("data/processed_population.csv", function(data){
 	/************************************************************************/
 	
 	/*********************Grouped Horizontal Bar Charts**********************/
-
-	var xMaxMin = max_min(data, xCat[1]);
-	var yMaxMin = max_min(data, yCat[1]);
-	maxMin = [xMaxMin, yMaxMin];
 	
 	function barChart(vof, state=0){
 		
@@ -583,12 +594,13 @@ d3.csv("data/processed_population.csv", function(data){
 			};
 		}
 
-		var chartWidth       = 250,
-			barHeight        = 20,
+		var chartWidth       = 400,
+			barHeight        = 30,
 			groupHeight      = barHeight * barData.series.length,
-			gapBetweenGroups = 20,
+			gapBetweenGroups = 30,
 			spaceForLabels   = 150,
-			spaceForLegend   = 150;
+			spaceForLegend   = 150,
+			extraHeight 	 = 30;
 
 		// Zip the series data together (first values, second values, etc.)
 		var zippedData = [];
@@ -619,7 +631,7 @@ d3.csv("data/processed_population.csv", function(data){
 		// Specify the chart area and dimensions
 		var chart = d3.select(".chart")
 			.attr("width", spaceForLabels + chartWidth + spaceForLegend)
-			.attr("height", chartHeight);
+			.attr("height", chartHeight+extraHeight);
 		
 		// remove current chart
 		chart.selectAll("g").remove();
@@ -629,7 +641,7 @@ d3.csv("data/processed_population.csv", function(data){
 			.data(zippedData)
 			.enter().append("g")
 			.attr("transform", function(d, i) {
-			  return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/barData.series.length))) + ")";
+			  return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/barData.series.length))+ extraHeight) + ")";
 			});
 
 		// Create rectangles of the correct width
@@ -692,7 +704,34 @@ d3.csv("data/processed_population.csv", function(data){
 			.attr('x', legendRectSize + legendSpacing)
 			.attr('y', legendRectSize - legendSpacing)
 			.text(function (d) { return d.label; });
+			
+		// add mean annotation
+		if(vof==0){
+			var temp = xMean;
+			var tempCol = "#e17f0e";
+		} else{
+			var temp = yMean;
+			var tempCol = "#4e8dba";
+		}
+		
+		var annotation = chart.append("g")
+			.attr( "transform", "translate(" +(xBar(temp)+spaceForLabels) + ", " + 0 + ")");
+		// draw line
+		annotation.append("rect")
+				.attr("transform", "translate(" +0 + ", " + extraHeight + ")")
+				.attr("width", 1)
+				.attr("height", (groupHeight+gapBetweenGroups)*3)
+				.style('fill', tempCol);
+		// add text
+		annotation.append("text")
+			.attr("x", 50)
+			.attr("y", 20)
+			.style("fill", tempCol)
+			.style("font-size", "14px")
+			.text("Mean value: " + temp);
+		
 	}
+	
 	// default bar: veggie
 	barChart(1);
 
@@ -711,10 +750,7 @@ function max_min(data_val, column){
 			minIdx = i;
 		}
 	}
-
 	return [Math.round(max),Math.round(min), maxIdx, minIdx];
-	
-	
 }
 
 // onepage-scroll main function
@@ -726,3 +762,6 @@ $(document).ready(function(){
 	keyboard: true
 	});
 });
+function to_about_page(){
+	$(".main").moveTo(2);
+}
