@@ -17,7 +17,7 @@
 			<section class="page1">
 			<div style="float:left; width:60%; margin-left:2.5%; margin-top:2.5%;  padding:1.5%; background-color:rgba(0,0,0,0.3);">
 				<h1>Fast Food or Vegetarian</h1>
-				<p>Explore how many fast food and vegetarian restaruants are in each states</p>
+				<p>Explore how many fast food and vegetarian restaurants are in each state</p>
 				<p>Kwon, YoungJu - CS498 Data Visualization </br> (Created based on 1920×1080 screen size)</p>
 			</div>
 			</section>
@@ -25,8 +25,8 @@
 			<section class="page15">
 			<div class="page_container" style=" margin:2.5%; padding-bottom:1%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.4);">
 				<h1>The Dataset</h1>
-				<h2>Three datasets have been used. First dataset has a list of over 10,000 fast food restaurants across America with their locations, and second dataset contains a list of over 18,000 restaurants that serve vegetarian or vegan food. With estimated total population in each states added, this data visualization is to explore which state likes fast food or vegetables dishes most. </br> </br>
-The reason why there are much more vegetarian restaurants than fast food restaurants is probably because restaurants that serve any vegetarian dish are considered as vegetarian in the dataset.
+				<h2>Three datasets have been used. The first dataset has a list of over 10,000 fast food restaurants across America with their locations, and the second dataset contains a list of over 18,000 restaurants that serve vegetarian or vegan food. With the estimated total population in each state added, this data visualization is to explore which state likes fast food or vegetable dishes most. </br> </br>
+The reason why there are much more vegetarian restaurants than fast food restaurants is probably that restaurants that serve any vegetarian dish are considered as a vegetarian in the dataset.
 				</h2>
 			</div>
 			</section>
@@ -34,36 +34,36 @@ The reason why there are much more vegetarian restaurants than fast food restaur
 			<section class="page2" id="2">
 				<div class="page_container" style=" margin:2.5%; padding-bottom:1%; padding-left:1%; padding-right:1%; padding-top:1.5%; background-color:rgba(0,0,0,0.3);" >
 					<h1> About the Visualization </h1>
-					<p>This web is interactive slideshow based on the data of number of vegetarian and fast food restaurants. 
-					Dataset contains each restaurants’ locations, states they located in, menus, name and so on. 
+					<p>This web is an interactive slideshow based on the data of the number of vegetarian and fast food restaurants. 
+					Dataset contains each restaurant’s location, state they located in, menus, name and so on. 
 					With population dataset added, the numbers are scaled for better comparison between states.</p>
 					  
 					<h2>Overall Structures</h2>
 					<p>
-					onepage-scroll.js template is employed for interactive slideshow. 
-					It basically enables to users to go slide by slide with simple scrolling or direction keys.
+					onepage-scroll.js template is employed for an interactive slideshow. 
+					It basically enables users to go slide by slide with simple scrolling or direction keys.
 					</p>
 					
 					<h2> Scenes </h2>
 					<p>The project consists of slides. Users can navigate each slide in sequence by using scrolling, or up down buttons. In order to explore both overview and details of each data of states, various types of charts for scenes including scatter, choropleth map, and bar charts are used. Scatter or bar chart alone is not enough to give location information about states. </br>
-Scatter plot shows general information about the number of each restaurants with and without scaled by population. Axes are little larger than range of data for better view. Axes also change when scaled. The size of mark is proportional to its population. </br>
-Choropleth map and bar charts are grouped together in fifth slide. Map visualization gives better intuition about which state has how many restaurants. And with bar plots, it is easier to compare with maximum and minimum numbers of each type of restaurants.
+Scatter plot shows general information about the number of each restaurant with and without scaled by population. Axes are little larger than the actual range of data for the better view. Axes also change when scaled. The size of a mark is proportional to its population. </br>
+Choropleth map and bar charts are grouped together in the fifth slide. Map visualization gives better intuition about which state has how many restaurants. And with bar plots, it is easier to compare with maximum and minimum numbers of each type of restaurants.
 </p>
 					
 					<h2> Annotations </h2>
-					<p>Various tooltips, axis, labels and legends are used in all three different scenes. 
+					<p>Various tooltips, axis, labels, and legends are used in all three different scenes. 
 					For instance, in scatter plot, tooltips come up when mouse is on the circles, describing its population and number of each types of restaurants. </p>
 					
 					<h2> Parameters </h2>
-					<p>On the right side of web, it has small dots for navigating pages. </br>
+					<p>On the right side of the web, it has small dots for navigating pages. </br>
 In scatter plot, legend boxes are parameters for filtering circles based on regions of states. </br>
-By clicking each states in the choropleth map, bar plot shows number of each types restaurants of selected states in bar plot.
+By clicking each state in the choropleth map, bar plot shows the number of each types restaurants of selected states in bar plot.
 
 					</p>
 					
 					<h2> Triggers </h2>
-					<p>Zoom functions and buttons are employed for updating new parameters in scenes. By double clicking and dragging, coordinates parameters are updated. And ‘reset zoom’ button will trigger to return to the original coordinates and sizes, while ‘scale’ button moves each circles position to scaled coordinates. </br>
-‘Vegetarian’, ‘Fast-Food’ buttons under choropleth map are triggers that change bar plot with its maximum and minimum numbers based on the type of restaurants.
+					<p>Zoom functions and buttons are employed for updating new parameters in scenes. By double clicking and dragging, coordinates parameters are updated. And ‘reset zoom’ button will trigger to return to the original coordinates and sizes, while the ‘scale’ button moves each circle position to scaled coordinates. </br>
+‘Vegetarian’, ‘Fast-Food’ buttons under the choropleth map are triggers that change bar plot with its maximum and minimum numbers based on the type of restaurants.
 
 					</p>
 					
@@ -103,8 +103,8 @@ By clicking each states in the choropleth map, bar plot shows number of each typ
 				</div>
 				<div style="float:left; width:30%; padding-left:2.5%;">
 					<h1> DETAILS</h1>
-					<h2>Choropleth map shows how many restaurants each states have per 100,000 residents. </br>
-Clicking each states on the map enables to compare with the states that have either maximum or minimum number of that type of restaurants.
+					<h2>Choropleth map shows how many restaurants each state have per 100,000 residents. </br>
+Clicking each state on the map enables to compare with the states that have either maximum or minimum number of that type of restaurants.
 
 					</h2>
 					<svg class="chart">
