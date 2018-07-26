@@ -7,7 +7,7 @@ This project is to utilize D3 javascript library for interactive visualization. 
 Three datasets have been used. First dataset has a list of over 10,000 fast food restaurants across America with their locations, and second dataset contains a list of over 18,000 restaurants that serve vegetarian or vegan food. With estimated total population in each states added, this data visualization is to explore which state likes fast food or vegetables dishes most. </br>
 [Vegetarian Restaurants all over the state](https://www.kaggle.com/datafiniti/vegetarian-vegan-restaurants) \
 [Fast Food Restaurants Across America](https://www.kaggle.com/datafiniti/fast-food-restaurants) \
-[Estimated Total Population](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2017/) \
+[Estimated Total Population](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2017/) 
 
 ## Author
 [Kwon, Young Ju](https://www.linkedin.com/in/youngju-kwon-50943398/)
