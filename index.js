@@ -756,12 +756,14 @@ function max_min(data_val, column){
 // onepage-scroll main function
 $(document).ready(function(){
 	$(".main").onepage_scroll({
-	sectionContainer: "section",
-	responsiveFallback: 100,
-	loop: true,
-	keyboard: true
+		sectionContainer: "section",
+		responsiveFallback: 100,
+		loop: true,
+		keyboard: true
 	});
 });
 function to_about_page(){
 	$(".main").moveTo(3);
 }
+
+// blocking scrolling on scatter plot

@@ -278,9 +278,16 @@ header {
   font-weight: bold;
 }
 
-.main section.page2 p, .main section.page5 p, .main section.page5 a  {
+.main section.page2 p {
   color: rgba(255,255,255,0.85);
   line-height: 100%;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.main section.page5 p, .main section.page5 a  {
+  color: rgba(255,255,255,0.85);
+  line-height: 90%;
   font-weight: 100;
   font-size: 18px;
 }
