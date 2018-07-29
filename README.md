@@ -1,5 +1,8 @@
 # CS498 projects: Data-Visualization with D3
 
+## GitPage
+Available on https://tonnykwon.github.io/Data-Visualization/
+
 ## About
 This project is to utilize D3 javascript library for interactive visualization. Among various interactive visualization method, interactive slideshow is used.
 
